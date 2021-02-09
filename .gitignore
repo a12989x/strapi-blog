@@ -112,3 +112,9 @@ exports
 *.cache
 build
 .strapi-updater.json
+
+############################
+# Package Lock
+############################
+
+package-lock.json
