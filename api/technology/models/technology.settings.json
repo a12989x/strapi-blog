@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "categories",
+  "collectionName": "technologies",
   "info": {
-    "name": "Category",
-    "description": ""
+    "name": "technology"
   },
   "options": {
     "increments": true,
@@ -13,12 +12,11 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true,
       "unique": true
     },
-    "posts": {
-      "collection": "post",
-      "via": "categories"
+    "projects": {
+      "via": "technologies",
+      "collection": "project"
     }
   }
 }

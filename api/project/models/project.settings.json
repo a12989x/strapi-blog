@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "projects",
   "info": {
-    "name": "Post",
+    "name": "Project",
     "description": ""
   },
   "options": {
@@ -18,10 +18,21 @@
     },
     "description": {
       "type": "text",
+      "unique": false,
       "required": true
     },
     "content": {
       "type": "richtext",
+      "required": true
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
       "required": true
     },
     "slug": {
@@ -29,25 +40,18 @@
       "targetField": "title",
       "required": true
     },
-    "cover": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "files",
-        "images",
-        "videos"
-      ],
-      "plugin": "upload",
+    "startedAt": {
+      "type": "date",
       "required": true
     },
-    "readMin": {
-      "type": "integer",
+    "finalizedAt": {
+      "type": "date",
       "unique": false,
       "required": true
     },
-    "categories": {
-      "via": "posts",
-      "collection": "category",
+    "technologies": {
+      "collection": "technology",
+      "via": "projects",
       "dominant": true
     }
   }
